@@ -15,6 +15,7 @@ spec:
       - {key: b_key, operator: NotIn, values: [b_value]}
       - {key: c_key, operator: Exists, values: []}
   template:
+    # Same pod structure here
     metadata:
       labels:
         pod_foo: pod_bar
