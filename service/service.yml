@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: servicename
+spec:
+  selector:
+    lorem: ipsum
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
