@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: replicasetname
+  name: deploymentname
   labels:
     foo: bar
     lorem: ipsum
@@ -10,6 +10,7 @@ spec:
   selector:
     matchLabels:
       foo: bar
+      lorem: ipsum
     matchExpressions:
       - {key: a_key, operator: In, values: [a_value]}
       - {key: b_key, operator: NotIn, values: [b_value]}
@@ -22,17 +23,7 @@ spec:
         pod_lorem: pod_ipsum
     spec:
       containers:
-      - name: container_name
+      - name: containername
         image: image:version
-        resources:
-          requests:
-            cpu: 100m # 0.1 CPU
-            memory: 100Mi # ~104MB
-          limits:
-            cpu: 300m # 0.3 CPU
-            memory: 300mi # ~314MB
-        env:
-        - name: ENV_VAR_NAME
-          value: env_var_value
         ports:
         - containerPort: 80
