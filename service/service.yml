@@ -6,6 +6,12 @@ spec:
   selector:
     lorem: ipsum
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 9376
+  - name: portname
+    protocol: TCP
+    port: 43
+    targetPort: 4321
+
+  - name: portname
+    protocol: TCP
+    port: 12
+    targetPort: 1234
